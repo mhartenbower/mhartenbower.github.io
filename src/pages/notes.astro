@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Summary from '../components/Summary.astro';
+import { getCollection } from 'astro:content';
+
+const notes = await getCollection('notes');
+---
+
+<Layout title="Matt Hartenbower">
+	<main>
+    {notes.map((s: any) => (
+    <Summary title={s.data.title} date={s.data.date} summary={s.data.summary} href=`notes/${s.slug}` />
+    ))}
+	</main>
+</Layout>
