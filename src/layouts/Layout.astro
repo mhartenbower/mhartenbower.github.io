@@ -18,16 +18,24 @@ const { title } = Astro.props;
 	</head>
 	<body>
     <nav>
-      <a href="/">/home</a>
-      <a href="notes">/notes</a>
-      <a href="about">/about</a>
+      <a href="/">home</a>
+      <a href="/notes">notes</a>
+      <a href="/about">about</a>
     </nav>
     <slot />
 	</body>
 <style>
   nav {
     font-weight: bold;
+    padding-top: 3em;
     padding-bottom: 3em;
+    font-size: 1.5em;
+  }
+  a:visited {
+    color: inherit;
+  }
+  a {
+    padding-right: .5em;
   }
   body {
     display: grid;
